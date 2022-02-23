@@ -1,0 +1,96 @@
+body {
+  background-color: #486980;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.create-employee {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+input:focus + label {
+ 
+   border-radius: 15px;
+   box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.51);
+}
+
+
+label {
+  display: flex;   
+ filter:brightness(80%);
+  justify-content: center;
+ 
+  width: auto;
+  background-color: transparent;
+  text-shadow: 0px 0px 15px rgba(255,255,255,1);
+  font-size: 1.5em;  
+  transition: all 0.4s ease-in;
+  
+}
+.box-input-label {
+  display: flex;
+  flex-direction: column-reverse;
+  gap:1em;
+}
+
+button {
+  border: solid #8093f1;
+  background: linear-gradient(45deg, #7bdfda, #8093f1);
+  color: white;
+  box-shadow: #8093f1;
+}
+
+.btn {
+  display: inline-block;
+  box-shadow: none;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  background-color: rgb(0, 240, 168);
+  height: 45px;
+  line-height: 42px;
+  padding: 0 30px;
+  font-size: 20px;
+  border-radius: 30px;
+  color: #4e88c2;
+  cursor: pointer;
+  transition: all 0.5s;
+  transition-timing-function: cubic-bezier(0.2, 3, 0.4, 1);
+  user-select: none;
+}
+
+
+.btn:active {
+  transform: scale(1.05, 1.05);
+}
+.fa-tint {
+    color: rgb 160,160,160;
+   position :relative;
+    top:-80px;
+    z-index: 100;
+    color:red;
+    transform:translateY();
+    animation: pop 1s reverse forwards
+}
+.explosion {
+  position: absolute; 
+  width: 600px;
+  height: 600px;
+  pointer-events: none;
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+}
