@@ -10,6 +10,8 @@ window.addEventListener("load", (() => { localStorage.removeItem('lastName') }))
 export default function CreateEmployees() {console.log(localStorage.firstName)
 
   const [show, setShow] = useState(false)
+  const openModal = () => setShow(true)
+  const closeModal= () => setShow(false)
  
   return (
     <div>
@@ -65,10 +67,10 @@ export default function CreateEmployees() {console.log(localStorage.firstName)
           <button className="btn" onClick={((e) => {
             if (localStorage.firstName != undefined && localStorage.lastName != undefined) {
               
-              setShow(!show)
+             openModal()
             }
            
-          })}    >Save</button> <Modal show={show} fontSize="2em" text="L'employé a été crée avec succès" fontSize="40" height="200" textTop="50" textLeft="100" borderRadius="25px"/>;
+          })}    >Save</button> <Modal show={show} close={closeModal}  text="L'employé a été crée avec succès" />;
         </div>
       </div>
       <div id="confirmation" className="modal">

@@ -7338,10 +7338,10 @@
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   "version" "17.0.2"
 
-"react-modal-nico-p14@^0.1.4":
-  "integrity" "sha512-XByi8MnUQZ91URjt9fI6Nr5itEvF23+feo2WRPhAi0Mt3pgR5LPmq0efyiUZGn3LM187OlZ5axVXMH6tq+CjnQ=="
-  "resolved" "https://registry.npmjs.org/react-modal-nico-p14/-/react-modal-nico-p14-0.1.4.tgz"
-  "version" "0.1.4"
+"react-modal-nico-p14@^0.1.7":
+  "integrity" "sha512-OpGrS1i9jeU4wtQXIytTgX/5l+qiGbTsHkcDNl+68M10nVVDw9iU+7j6kWFWzIhrs8AZqu1r80KLquWlxw6hbw=="
+  "resolved" "https://registry.npmjs.org/react-modal-nico-p14/-/react-modal-nico-p14-0.1.7.tgz"
+  "version" "0.1.7"
   dependencies:
     "@babel/polyfill" "^7.12.1"
     "@testing-library/jest-dom" "^5.16.2"

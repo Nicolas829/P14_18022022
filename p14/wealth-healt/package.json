@@ -7,7 +7,7 @@
     "animejs": "^3.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-modal-nico-p14": "^0.1.4",
+    "react-modal-nico-p14": "^0.1.7",
     "react-scripts": "5.0.0",
     "simple-component-library-nico": "^0.2.7",
     "web-vitals": "^2.1.4"
