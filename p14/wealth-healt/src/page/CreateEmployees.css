@@ -1,8 +1,8 @@
 body {
-background-color: #29487c;
-background: linear-gradient(171deg,#a8bdcb 0%, #6ea5a9 80%);
+background-color: #00091a;
+background: linear-gradient(90deg,#5b89ec 0%, #7de0d3 120%);
 overflow: hidden;
- 
+
 }
 
 .container {
@@ -17,14 +17,23 @@ overflow: hidden;
   align-items: left;
   box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.51);
   transition:0.5s;
+  background: linear-gradient(135deg,#5b89ec 0%, #7de0d3 120%);
+  color:white;
 }
 .container:hover{
 box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.51);
 }
 .create-employee {
   display: flex;
-  flex-direction: column;
-  gap: 1em;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3em;
+}
+.box-input-label {
+  width:40%;
+  display: flex;
+  flex-direction: column-reverse;
+ 
 }
 input{
   height:1.5em;
@@ -36,37 +45,53 @@ input:focus{
 }
 
 
+.inputdate{
+   font-size: 1em;
+  width:40%;
+  margin-left:2em;
+  background-color: white;
+ 
+}
+.dropdown{
+ 
+margin-left:1em;
+width:80%}
 
 
 label {
-  display: flex;   
-  filter:brightness(80%);
-  margin-left:4em;
+  display: flex;     
+  margin-left:2em;
   width: auto;
   background-color: transparent; 
   font-size: 1.2em;  
   transition: all 0.4s ease-in;
   
 }
-.box-input-label {
-  display: flex;
-  flex-direction: column-reverse;
-  gap:1em;
-}
 
-button {
-  border: solid #8093f1;
-  background: linear-gradient(45deg, #7bdfda, #8093f1);
-  color: white;
+
+.btn { 
+
+	border: none;	
+	font: inherit; 
+ 
+  background: linear-gradient(45deg, #f0e372, #8093f1);
+  color:white;
   box-shadow: #8093f1;
   height: 45px;
   width:40%;
+  outline: inherit;
   align-self:center;
+  transition:0.5s; 
 }
 
-
-
+.btn:hover{
+ background-color: transparent; 
+ transform: scale(1.1);
+ border-top: solid ;
+ border-bottom:solid  ;
+}
 .btn:active {
   transform: scale(1.05, 1.05);
+  
 }
 

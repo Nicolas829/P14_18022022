@@ -1,18 +1,48 @@
 import React from 'react'
 import './CreateEmployees.css'
 import { useState } from 'react'
-
+import Button from '../component/button'
+import { Link } from 'react-router-dom'
 import  Modal  from 'react-modal-nico-p14/dist/component/modal'
+import InputEmployees from '../component/input'
+import InputDatePickerEmployees from '../component/datePicker'
+
+import 'react-dropdown-now/style.css';
+import DropDown from '../component/dropdown'
 
 
 
-window.addEventListener("load", (() => { localStorage.removeItem('lastName') }))
-export default function CreateEmployees() {console.log(localStorage.firstName)
+
+export default function CreateEmployees(props) {
+  const data = props.data
+  
 
   const [show, setShow] = useState(false)
   const openModal = () => setShow(true)
-  const closeModal= () => setShow(false)
+  const closeModal = () => setShow(false)
+   
+  const EmployeesCreation = [
+    { label: 'firstName', value:"First name" },
+    { label: 'lastName', value: "Last name" },
+    { label: 'startDate', value: "Start date" },
+    { label: 'dateOfBirth', value: "Date of birth" },
+   { label: 'street', value: "Street" },
+   { label: 'city', value: "City" },
+   { label: 'state', value: "State" },
+    { label: 'zipCode', value: "zip Code" },
+  {label:"department", value: "Department"}]
  
+  let employeesCreationList = EmployeesCreation.map(object => {
+    if (object.label === 'dateOfBirth' || object.label === 'startDate')
+      return <InputDatePickerEmployees item={object.value} label={object.label} />
+    if(object.label==="state"|| object.value ==="Department")return <DropDown item={object.value} label={object.label} />
+    else return <InputEmployees item={object.value} label={object.label} key={object.label} />
+  }
+    
+   
+    
+    )
+  
   return (
     <div>
       <div className="title">
@@ -20,57 +50,12 @@ export default function CreateEmployees() {console.log(localStorage.firstName)
       </div>
   
       <div className="container">
-        <a href="employee-list.html">View Current Employees</a>
-
+        <Link to="/list">View Current Employees</Link>
         <h2>Create Employee</h2>
-
         <div className="create-employee">
-          <div className="box-input-label">
-            <input type="text" id="first-name" onChange={(e) =>localStorage.setItem("firstName", e.target.value)} />
-            <label className="first-name">First Name</label>
-            <span className='box'></span>
-          </div>
-          <div className="box-input-label">
-            <input type="text" id="last-name" onChange={(e) =>localStorage.setItem("lastName", e.target.value)} />
-            <label className="last-name">Last Name</label>
-          </div>
-
-          <div className="box-input-label">
-            <input id="start-date" type="text" onChange={(e) =>localStorage.setItem("startDate", e.target.value)} />
-            <label className="start-date">Start Date</label>
-          </div>
-          <div className="box-input-label">
-            <input id="date-of-birth" type="text" onChange={(e) =>localStorage.setItem("dateOfBirth", e.target.value)} />
-            <label className="date-of-birth">Date of Birth</label>
-          </div>
-
-          <fieldset className="address">
-            <legend>Address</legend>
-
-            <div className="box-input-label">
-              <input id="street" type="text" onChange={(e) =>localStorage.setItem("street", e.target.value)} />
-              <label className="street">Street</label>
-            </div>
-            <div className="box-input-label">
-              <input id="city" type="text" onChange={(e) =>localStorage.setItem("city", e.target.value)} />
-              <label className="city">City</label>
-            </div>
-            <div className="box-input-label">
-              <select name="state" id="state" onChange={(e) =>localStorage.setItem("state", e.target.value)}></select>
-              <label className="state">State</label>
-            </div>
-            <div className="box-input-label">
-              <input id="zip-code" type="number" onChange={(e) =>localStorage.setItem("zipCode", e.target.value)} />
-              <label className="zip-code">Zip Code</label>
-            </div>
-          </fieldset>
-          <button className="btn" onClick={((e) => {
-            if (localStorage.firstName != undefined && localStorage.lastName != undefined) {
-              
-             openModal()
-            }
-           
-          })}    >Save</button> <Modal show={show} close={closeModal}  text="L'employé a été crée avec succès" />;
+          {employeesCreationList}       
+          <Button  openModal={openModal} data={data}/>
+          <Modal show={show} close={closeModal} text="L'employé a été crée avec succès" />;
         </div>
       </div>
       <div id="confirmation" className="modal">
