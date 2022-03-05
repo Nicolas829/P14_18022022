@@ -1,5 +1,6 @@
 import { Dropdown, Selection } from 'react-dropdown-now';
 import 'react-dropdown-now/style.css';
+import store from '../redux/store/store';
 
 // normal usage
 const states = [
@@ -245,14 +246,14 @@ const department =  ["Sales", "Marketing", "Engineering", "Human Resources", "Le
 
 export default function DropDown(props) {
     let title
-    
+    let dispatch
     let option = []
-    if (props.item === "State") { title = props.label; states.forEach(object => { option.push(object.name) }) }
+    if (props.item === "State") { title = props.label;dispatch = props.dispatch; states.forEach(object => { option.push(object.name) }) }
     if (props.item === "Department") {
-        title = props.label; department.forEach(item => option.push(item))
+        title = props.label; dispatch = props.dispatch; department.forEach(item => option.push(item))
         
     }
-   console.log(title)
+  
   
     
         return <div className="box-input-label">
@@ -260,7 +261,7 @@ export default function DropDown(props) {
             placeholder={`Select ${title}`}
             options={option}
             value="one"
-            onChange={(value) => sessionStorage.setItem(title, value.value)}
+                onChange={(value) => store.dispatch( dispatch (value.value))}
             onSelect={(value) => console.log('selected!', value)} // always fires once a selection happens even if there is no change
 
             onOpen={() => console.log('open!')}

@@ -1,20 +1,18 @@
-export function saveEmployees() {
-    console.log(sessionStorage)
-    const employees = JSON.parse(localStorage.getItem('employees')) || [];
-    const employee = {
-        firstName: sessionStorage.firstName,
-        lastName:sessionStorage.lastName,
-        dateOfBirth: sessionStorage.dateOfBirth,
-        startDate: sessionStorage.startDate,        
-        street: sessionStorage.street,
-        city: sessionStorage.city,
-        state: sessionStorage.state,
-        zipCode: sessionStorage.zipCode,
-        department: sessionStorage.department,
-    };
-    employees.push(employee);  
+import EmployeesList from "../page/employeeList";
+import store from "../redux/store/store";
+
+export function saveEmployees(data) {
+    console.log(data)
+  
+    const employees = JSON.parse(data);
+    
+    employees.push(store.getState());  
+    console.log(employees)
+    data=employees
+    
    
-    sessionStorage.clear()
-    localStorage.setItem('employees', JSON.stringify(employees));
+    console.log('data', data)
+    //sessionStorage.clear()
+    //localStorage.setItem('employees', JSON.stringify(employees));
      //localStorage.clear()
 }

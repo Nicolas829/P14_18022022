@@ -10,7 +10,7 @@ import EmployeesList from "../page/employeeList";
 import CreateEmployees from "../page/createemployee";
 
 
-const data = [
+const DATA = [
     {
        
         firstName: '',
@@ -24,8 +24,8 @@ const data = [
     },
    
 ]
-
-
+const data= JSON.stringify(DATA)
+console.log(data)
 export default function Routage() {
     
     return(

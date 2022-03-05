@@ -4,7 +4,7 @@ export default function Button(props) {
     const openModal = () => props.openModal()    
    
     return (<button className="btn" onClick={((e) => {
-        saveEmployees()    
+        saveEmployees(props.data)    
          openModal()     
       
            

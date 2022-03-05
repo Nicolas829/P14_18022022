@@ -9,6 +9,7 @@ import InputDatePickerEmployees from '../component/datePicker'
 
 import 'react-dropdown-now/style.css';
 import DropDown from '../component/dropdown'
+import { City, DateOfBirth, Department, FirstName, LastName, StartDate, State, Street, ZipCode } from '../redux/reducer/reducer'
 
 
 
@@ -22,21 +23,21 @@ export default function CreateEmployees(props) {
   const closeModal = () => setShow(false)
    
   const EmployeesCreation = [
-    { label: 'firstName', value:"First name" },
-    { label: 'lastName', value: "Last name" },
-    { label: 'startDate', value: "Start date" },
-    { label: 'dateOfBirth', value: "Date of birth" },
-   { label: 'street', value: "Street" },
-   { label: 'city', value: "City" },
-   { label: 'state', value: "State" },
-    { label: 'zipCode', value: "zip Code" },
-  {label:"department", value: "Department"}]
+    { label: 'firstName', value:"First name", dispatch:FirstName, },
+    { label: 'lastName', value: "Last name", dispatch:LastName },
+    { label: 'startDate', value: "Start date", dispatch:StartDate },
+    { label: 'dateOfBirth', value: "Date of birth", dispatch:DateOfBirth },
+   { label: 'street', value: "Street", dispatch:Street },
+   { label: 'city', value: "City", dispatch:City },
+    { label: 'state', value: "State", dispatch:State },
+    { label: 'zipCode', value: "zip Code", dispatch:ZipCode  },
+    { label: "department", value: "Department", dispatch:Department}]
  
   let employeesCreationList = EmployeesCreation.map(object => {
     if (object.label === 'dateOfBirth' || object.label === 'startDate')
-      return <InputDatePickerEmployees item={object.value} label={object.label} />
-    if(object.label==="state"|| object.value ==="Department")return <DropDown item={object.value} label={object.label} />
-    else return <InputEmployees item={object.value} label={object.label} key={object.label} />
+      return <InputDatePickerEmployees item={object.value} label={object.label} dispatch={object.dispatch}/>
+    if(object.label==="state"|| object.value ==="Department")return <DropDown item={object.value} dispatch={object.dispatch} label={object.label} />
+    else return <InputEmployees item={object.value} label={object.label} key={object.label} dispatch={object.dispatch} />
   }
     
    
