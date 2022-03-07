@@ -1,11 +1,8 @@
 import Table from "../component/dataTable";
-
+import store from "../redux/store/store";
 
              
 
-export default function EmployeesList(props) {
-    const employees = JSON.parse(props.data);
-    
-    console.log(employees)
-    return (<Table data={employees} />)
+export default function EmployeesList(props) {   
+    return (<Table  />)
 }

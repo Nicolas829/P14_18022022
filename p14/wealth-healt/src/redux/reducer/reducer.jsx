@@ -1,7 +1,6 @@
 import produce from 'immer'
 
 
-
 const FIRSTNAME = 'firstName'
 const LASTNAME = 'lastName'
 const DATEOFBIRTH = 'dateOfBirth'
@@ -11,6 +10,7 @@ const CITY = 'city'
 const STATE = 'state'
 const ZIPCODE = 'zipCode'
 const DEPARTMENT = 'department'
+const EMPLOYEESDATA = "employeesdata"
 
 
 export const FirstName= (firstName) => ({
@@ -49,6 +49,11 @@ export const Department= (department) => ({
   type: DEPARTMENT,
   payload: department,
 })
+export const EmployeesData = (data) => ({
+    type: EMPLOYEESDATA,
+    payload:data,
+})
+
 
 const initialState = {
         firstName: "",
@@ -60,57 +65,55 @@ const initialState = {
         state: "",
         zipCode: "",
         department: "",
+        data: [],
+        dataTransit:[]
 }
 
 export default function EmployeesReducer(state = initialState, action) {
   return produce(state, (draft) => {
       switch (action.type) {
           case FIRSTNAME: {
-              draft.firstName = action.payload
-        
+              draft.firstName = action.payload        
               return
           }
           case LASTNAME: {
-              draft.lastName = action.payload
-        
+              draft.lastName = action.payload        
               return
           }
           case DATEOFBIRTH: {
-              draft.dateOfBirth = action.payload
-        
+              draft.dateOfBirth = action.payload        
               return
           }
             
           case STARTDATE: {
-              draft.startDate = action.payload
-        
+              draft.startDate = action.payload        
               return
           }
           case STREET: {
-              draft.street = action.payload
-        
+              draft.street = action.payload        
               return
           }
           case CITY: {
-              draft.city = action.payload
-        
+              draft.city = action.payload        
               return
           }
           case STATE: {
-              draft.state = action.payload
-        
+              draft.state = action.payload        
               return
           }
           case ZIPCODE: {
-              draft.zipCode = action.payload
-        
+              draft.zipCode = action.payload        
               return
           }
           case DEPARTMENT: {
-              draft.department = action.payload
-        
+              draft.department = action.payload        
               return
           }
+         
+          case EMPLOYEESDATA: {
+          draft.data.push(action.payload)
+          return
+              }
             default:
           
         }

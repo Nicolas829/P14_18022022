@@ -256,17 +256,17 @@ export default function DropDown(props) {
   
   
     
-        return <div className="box-input-label">
+    return <div className="box-input-label">
+            <label className={title}>{title}</label>
            <Dropdown className='dropdown'
             placeholder={`Select ${title}`}
             options={option}
             value="one"
-                onChange={(value) => store.dispatch( dispatch (value.value))}
+            onChange={(value) => store.dispatch( dispatch (value.value))}
             onSelect={(value) => console.log('selected!', value)} // always fires once a selection happens even if there is no change
-
             onOpen={() => console.log('open!')}
         />
-            <label className={title}>{title}</label>
+            
            
           </div> 
     

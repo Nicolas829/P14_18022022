@@ -1,17 +1,28 @@
 import EmployeesList from "../page/employeeList";
+import { EmployeesData, EmployeesDataTransit } from "../redux/reducer/reducer";
 import store from "../redux/store/store";
 
-export function saveEmployees(data) {
-    console.log(data)
-  
-    const employees = JSON.parse(data);
-    
-    employees.push(store.getState());  
-    console.log(employees)
-    data=employees
-    
+export function saveEmployees() {
    
-    console.log('data', data)
+
+   const data = {
+        firstName:store.getState().firstName,
+        lastName:store.getState().lastName,
+        dateOfBirth:store.getState().dateOfBirth,
+        startDate: store.getState().startDate,        
+        street: store.getState().street,
+        city: store.getState().city,
+        state: store.getState().state,
+        zipCode: store.getState().zipCode,
+        department: store.getState().department,
+       
+}
+    store.dispatch(EmployeesData(data))
+   
+    //employeeList.push(store.getState().data)
+    //console.log(employeeList)
+    //store.dispatch(EmployeesData(employeeList))
+    
     //sessionStorage.clear()
     //localStorage.setItem('employees', JSON.stringify(employees));
      //localStorage.clear()

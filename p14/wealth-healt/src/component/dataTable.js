@@ -1,4 +1,6 @@
 import DataTable from 'react-data-table-component';
+import EmployeesList from '../page/employeeList';
+import store from '../redux/store/store';
 
 const columns = [
     
@@ -41,13 +43,13 @@ const columns = [
     },
 ];
 
+ 
 
-export default function Table(props) {
-    console.log(props)
+export default function Table(props) {      
     return (
         <DataTable
             columns={columns}
-            data={props.data}
+            data={store.getState().data}
         />
     );
 };

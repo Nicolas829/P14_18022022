@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import  Modal  from 'react-modal-nico-p14/dist/component/modal'
 import InputEmployees from '../component/input'
 import InputDatePickerEmployees from '../component/datePicker'
-
 import 'react-dropdown-now/style.css';
 import DropDown from '../component/dropdown'
 import { City, DateOfBirth, Department, FirstName, LastName, StartDate, State, Street, ZipCode } from '../redux/reducer/reducer'
@@ -27,8 +26,8 @@ export default function CreateEmployees(props) {
     { label: 'lastName', value: "Last name", dispatch:LastName },
     { label: 'startDate', value: "Start date", dispatch:StartDate },
     { label: 'dateOfBirth', value: "Date of birth", dispatch:DateOfBirth },
-   { label: 'street', value: "Street", dispatch:Street },
-   { label: 'city', value: "City", dispatch:City },
+    { label: 'street', value: "Street", dispatch:Street },
+    { label: 'city', value: "City", dispatch:City },
     { label: 'state', value: "State", dispatch:State },
     { label: 'zipCode', value: "zip Code", dispatch:ZipCode  },
     { label: "department", value: "Department", dispatch:Department}]
@@ -56,12 +55,10 @@ export default function CreateEmployees(props) {
         <div className="create-employee">
           {employeesCreationList}       
           <Button  openModal={openModal} data={data}/>
-          <Modal show={show} close={closeModal} text="L'employé a été crée avec succès" />;
+          <Modal show={show} close={closeModal} text="L'employé a été crée avec succès" />
         </div>
       </div>
-      <div id="confirmation" className="modal">
-        Employee Created!
-      </div>
+      
     </div>
   )
 }
