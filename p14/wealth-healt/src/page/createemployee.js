@@ -8,6 +8,7 @@ import InputEmployees from '../component/input'
 import InputDatePickerEmployees from '../component/datePicker'
 import 'react-dropdown-now/style.css';
 import DropDown from '../component/dropdown'
+import store from '../redux/store/store'
 import { City, DateOfBirth, Department, FirstName, LastName, StartDate, State, Street, ZipCode } from '../redux/reducer/reducer'
 
 
@@ -29,8 +30,10 @@ export default function CreateEmployees(props) {
     { label: 'street', value: "Street", dispatch:Street },
     { label: 'city', value: "City", dispatch:City },
     { label: 'state', value: "State", dispatch:State },
-    { label: 'zipCode', value: "zip Code", dispatch:ZipCode  },
-    { label: "department", value: "Department", dispatch:Department}]
+    { label: 'zipCode', value: "zip Code", dispatch: ZipCode },    
+    { label: "department", value: "Department", dispatch: Department }]
+  
+   console.log(store.getState())
  
   let employeesCreationList = EmployeesCreation.map(object => {
     if (object.label === 'dateOfBirth' || object.label === 'startDate')
@@ -47,11 +50,13 @@ export default function CreateEmployees(props) {
     <div>
       <div className="title">
         <h1>HRnet</h1>
+       <Link to="/list" className='view-employee'> <button className='btn button-view-employee'> View Current Employees</button> </Link>
+        
       </div>
   
       <div className="container">
-        <Link to="/list">View Current Employees</Link>
-        <h2>Create Employee</h2>
+       
+        <h2 >Create Employee</h2>
         <div className="create-employee">
           {employeesCreationList}       
           <Button  openModal={openModal} data={data}/>

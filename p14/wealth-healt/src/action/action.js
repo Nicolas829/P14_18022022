@@ -16,14 +16,10 @@ export function saveEmployees() {
         zipCode: store.getState().zipCode,
         department: store.getState().department,
        
-}
+    }
+     
     store.dispatch(EmployeesData(data))
    
-    //employeeList.push(store.getState().data)
-    //console.log(employeeList)
-    //store.dispatch(EmployeesData(employeeList))
-    
-    //sessionStorage.clear()
-    //localStorage.setItem('employees', JSON.stringify(employees));
-     //localStorage.clear()
+   
+
 }
