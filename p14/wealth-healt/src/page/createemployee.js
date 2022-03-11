@@ -10,6 +10,7 @@ import 'react-dropdown-now/style.css';
 import DropDown from '../component/dropdown'
 import store from '../redux/store/store'
 import { City, DateOfBirth, Department, FirstName, LastName, StartDate, State, Street, ZipCode } from '../redux/reducer/reducer'
+import { saveEmployees } from '../action/action'
 
 
 
@@ -50,7 +51,7 @@ export default function CreateEmployees(props) {
     <div>
       <div className="title">
         <h1>HRnet</h1>
-       <Link to="/list" className='view-employee'> <button className='btn button-view-employee'> View Current Employees</button> </Link>
+       <Link to="/list" className='view-employee'> <Button className='btn button-view-employee' title="View Current Employees"> </Button> </Link>
         
       </div>
   
@@ -58,8 +59,9 @@ export default function CreateEmployees(props) {
        
         <h2 >Create Employee</h2>
         <div className="create-employee">
-          {employeesCreationList}       
-          <Button  openModal={openModal} data={data}/>
+          {employeesCreationList}   
+          
+          <Button  function1={openModal} function2={saveEmployees} data={data} className="btn save" title="save" />
           <Modal show={show} close={closeModal} text="L'employé a été crée avec succès" />
         </div>
       </div>

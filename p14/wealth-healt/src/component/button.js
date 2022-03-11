@@ -2,12 +2,18 @@ import { saveEmployees } from "../action/action"
 
 export default function Button(props) {
     const openModal = () => props.openModal()    
-   
-    return (<div className="container-btn-save"><button className="btn save" onClick={((e) => {
-        saveEmployees(props.data)    
-         openModal()     
+    const function1 = () => { if (props.function1) { props.function1() } }
+    const function2 = () => {
+        if (props.function2) { props.function2() }
+    }
+    return (<div className={`container-${props.className}`}><button className="btn save" onClick={((e) => {
+        if (function1 !== "") { function1() } function2(props.data)          
       
            
-    })}    >Save</button></div>)
+    })}    >{props.title}</button></div>)
 }
+
+const comment = "lkjlqsdqsdqs "
+
+if(comment.length>10){console.log("MEEEEEEEEEEEEEEEEEEEEEEErde")}
 

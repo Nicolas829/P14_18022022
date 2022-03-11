@@ -16,7 +16,7 @@ export default function Routage() {
     return(
     <Router>
         <Routes>
-                <Route path="" element={<CreateEmployees />} />
+                <Route path="/" element={<CreateEmployees />} />
                 <Route path="/list" element={<EmployeesList />} />
         </Routes>
     </Router>)
