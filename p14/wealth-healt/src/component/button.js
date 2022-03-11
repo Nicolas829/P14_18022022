@@ -13,7 +13,5 @@ export default function Button(props) {
     })}    >{props.title}</button></div>)
 }
 
-const comment = "lkjlqsdqsdqs "
 
-if(comment.length>10){console.log("MEEEEEEEEEEEEEEEEEEEEEEErde")}
 
