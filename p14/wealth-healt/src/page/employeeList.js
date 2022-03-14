@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import Button from "../component/button";
 import Table from "../component/dataTable";
-import Search from '../component/search';
-import store from "../redux/store/store";
-import { useState } from 'react'
+import React from "react";
+
 
 
 

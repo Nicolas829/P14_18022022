@@ -1,4 +1,5 @@
-import store from "../redux/store/store"
+import React from 'react';
+import store from '../redux/store/store';
 
 export default function InputEmployees(props) {
   const item = props.item

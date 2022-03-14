@@ -1,9 +1,10 @@
 import DatePicker from 'react-datepicker';
+import React from 'react';
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from 'react';
 import { format } from 'date-fns/esm'
 import store from '../redux/store/store';
-import container from 'react-modal-nico-p14/dist/component/container';
+
 
 
 

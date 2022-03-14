@@ -1,3 +1,4 @@
+import React from 'react';
 import { combineReducers, createStore } from 'redux'
 import EmployeesReducer from '../reducer/reducer'
 

@@ -1,4 +1,4 @@
-import EmployeesList from "../page/employeeList";
+import React from 'react';
 import { EmployeesData, EmployeesDataTransit } from "../redux/reducer/reducer";
 import store from "../redux/store/store";
 import { ResetState } from "../redux/reducer/reducer";
