@@ -28,10 +28,6 @@ h2{
   
   text-align: center;
 }
-
-
-
-
 .create-employee {
   display: flex;
   flex-direction: column;
@@ -70,8 +66,6 @@ label {
   transition: all 0.4s ease-in;
   
 }
-
-
 
 .btn {		
   border:none;

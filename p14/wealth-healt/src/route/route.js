@@ -12,12 +12,12 @@ import CreateEmployees from "../page/createemployee";
 
 
 export default function Routage() {
-    
-    return(
+
+  return (
     <Router>
-        <Routes>
-                <Route path="/" element={<CreateEmployees />} />
-                <Route path="/list" element={<EmployeesList />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<CreateEmployees />} />
+        <Route path="/list" element={<EmployeesList />} />
+      </Routes>
     </Router>)
 }

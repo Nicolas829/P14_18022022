@@ -1,16 +1,21 @@
 import { Link } from "react-router-dom";
 import Button from "../component/button";
 import Table from "../component/dataTable";
+import Search from '../component/search';
 import store from "../redux/store/store";
+import { useState } from 'react'
 
-             
 
-export default function EmployeesList(props) {   
-    return ( <div>
-        <Table />
-       
-        <Link to='/' className="link-return"> <Button title="retour à la création d'employé" className="btn return" />  
-        </Link >
-    </div>
-        )
+
+export default function EmployeesList(props) {
+
+
+  return (<div>
+
+    <Table />
+    <Link to='/' className="link-return"> <Button title="retour à la création d'employé" className="btn return" />
+
+    </Link >
+  </div>
+  )
 }
