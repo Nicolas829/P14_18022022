@@ -1,6 +1,6 @@
 {
   "name": "wealth-healt",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "main": "dist/index.js",
   "source": "src/index.js",
@@ -10,7 +10,6 @@
     "README.md"
   ],
   "dependencies": {
-    "animation-firework-nico": "^0.1.1",
     "animejs": "^3.2.1",
     "babel-cli": "^6.26.0",
     "immer": "^9.0.12",
