@@ -3,6 +3,9 @@ import { EmployeesData, EmployeesDataTransit } from "../redux/reducer/reducer";
 import store from "../redux/store/store";
 import { ResetState } from "../redux/reducer/reducer";
 
+/**
+ * This function will save the data from the form to the store
+ */
 export function saveEmployees() {
 
 

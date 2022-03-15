@@ -57,6 +57,11 @@ const columns = [
 
 
 
+/**
+ * It creates a table with the data from the store.
+ * @param props - The props passed to the component.
+ * @returns The DataTable component is being returned.
+ */
 export default function Table(props) {
 
 

@@ -9,6 +9,7 @@ import store from '../redux/store/store';
 
 
 
+/* This is a simple date picker. */
 export default function InputDatePickerEmployees(props) {
   const [startDate, setStartDate] = useState(new Date());
 
@@ -18,6 +19,7 @@ export default function InputDatePickerEmployees(props) {
   return (<div className="box-input-label">
     <label className={item}>{item}</label>
     <div className="container-datepicker">
+
       <DatePicker
         className='main-container-datepicker'
         selected={startDate}

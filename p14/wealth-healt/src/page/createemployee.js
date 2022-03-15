@@ -15,6 +15,15 @@ import { saveEmployees } from '../action/action'
 
 
 
+/**
+ * This function is used to create an employee.
+ * @param props - The props object is the way we can pass data to our component. It is a regular
+ * JavaScript object.
+ * @returns The return is a div with a class of container. Within the container there is a h2 with the
+ * text Create Employee. There is also a div with a class of create-employee. This div contains the
+ * inputs and dropdowns for the employee creation. There is also a button with a class of btn save.
+ * This button calls the saveEmployees function.
+ */
 export default function CreateEmployees(props) {
   const data = props.data
 
@@ -35,6 +44,9 @@ export default function CreateEmployees(props) {
     { label: "department", value: "Department", dispatch: Department }]
 
 
+
+  /* The map function is used to create a list of elements. In this case, the list is the list of
+  inputs and dropdowns. */
 
   let employeesCreationList = EmployeesCreation.map(object => {
     if (object.label === 'dateOfBirth' || object.label === 'startDate')
