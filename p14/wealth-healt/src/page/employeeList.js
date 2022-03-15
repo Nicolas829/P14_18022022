@@ -13,7 +13,6 @@ export default function EmployeesList(props) {
 
     <Table />
     <Link to='/' className="link-return"> <Button title="retour à la création d'employé" className="btn return" />
-
     </Link >
   </div>
   )

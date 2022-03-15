@@ -245,6 +245,11 @@ const states = [
 
 const department = ["Sales", "Marketing", "Engineering", "Human Resources", "Legal"]
 
+/**
+ * This function creates a dropdown menu with the label of the item and the dispatch function
+ * @param props - the props passed to the component
+ * @returns A dropdown menu with the label of the state or department.
+ */
 export default function DropDown(props) {
     let title
     let dispatch

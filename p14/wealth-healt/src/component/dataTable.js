@@ -9,6 +9,29 @@ const columns = [
 
     {
         name: 'First Name',
+        /**
+         * The InputDatePickerEmployees function is a React component that displays a label and a date picker. 
+         * 
+         * The date picker is a DatePicker component from the react-datepicker library. 
+         * 
+         * The date picker is configured to show the month dropdown and the year dropdown. 
+         * 
+         * The date picker is configured to show the next month when the user clicks on the month dropdown. 
+         * 
+         * The date picker is configured to show the date picker in a portal. 
+         * 
+         * The date picker is configured to clear the date picker when the user clicks on the clear button. 
+         * 
+         * The date picker is configured to show the date picker in a portal. 
+         * 
+         * The date picker is configured to show the date picker in a portal. 
+         * 
+         * The date picker is configured to show the date picker in a portal. 
+         * 
+         * The date picker is
+         * @param props - The props that are passed to the component.
+         * @returns A datepicker component.
+         */
         selector: row => row.firstName,
         sortable: true,
     },
