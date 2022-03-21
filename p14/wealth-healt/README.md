@@ -14,7 +14,7 @@ import EmployeesWealthHealth from 'wealth-healt/dist/App'
 Example:
 ```bash
 ReactDOM.render(
-  <EmployeesWealthHealth />,
+  EmployeesWealthHealth ,
   document.getElementById('root')
 );
 ```
