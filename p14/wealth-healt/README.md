@@ -12,11 +12,12 @@ import EmployeesWealthHealth from 'wealth-healt/dist/App'
 
 
 Example:
-
+```bash
 ReactDOM.render(
   <EmployeesWealthHealth />,
   document.getElementById('root')
 );
+```
 
 Enjoy...
 
